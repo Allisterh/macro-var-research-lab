@@ -1,0 +1,30 @@
+name: wide
+description: McCracken-Ng FRED-QD panel (~200 series). Use for FAVAR and large BVAR.
+start: '1985-01-01'
+end: null
+
+# This config is special: instead of listing variables, point to the FRED-QD CSV.
+# Download: https://research.stlouisfed.org/econ/mccracken/fred-databases/
+# Place at: data/raw/fred-qd.csv
+
+mode: fred_qd_panel
+csv_path: data/raw/fred-qd.csv
+
+# Series to use as forecast TARGETS (not all 200 - just the four we evaluate on)
+targets:
+  - GDPC1
+  - CPILFESL
+  - FEDFUNDS
+  - UNRATE
+
+# Drop these series even if present (problematic transforms or short histories)
+exclude:
+  - VIXCLSx  # short history
+  - CONSUMERx  # too many breaks
+
+# Keep only series that have data going back to this date
+min_start_date: '1985-01-01'
+
+# Maximum number of series to keep (after filtering by min_start_date)
+# Banbura-Giannone-Reichlin (2010) work with ~20-130 variables.
+max_series: 100

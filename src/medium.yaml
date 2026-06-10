@@ -1,0 +1,37 @@
+name: medium
+description: 7-variable macro VAR with leading indicators (term spread, credit spread, oil)
+start: '1985-01-01'
+end: null
+targets:
+  - GDPC1
+  - CPILFESL
+  - FEDFUNDS
+  - UNRATE
+
+variables:
+  # Core (same as small)
+  - fred_id: GDPC1
+    transform_code: 5
+    agg: last
+  - fred_id: CPILFESL
+    transform_code: 5
+    agg: mean
+  - fred_id: FEDFUNDS
+    transform_code: 1
+    agg: mean
+  - fred_id: UNRATE
+    transform_code: 1
+    agg: mean
+  # Leading indicators
+  - fred_id: T10Y3M
+    description: 10y minus 3m Treasury spread (recession leading indicator)
+    transform_code: 1
+    agg: mean
+  - fred_id: BAA10Y
+    description: BAA corporate yield minus 10y Treasury (credit spread)
+    transform_code: 1
+    agg: mean
+  - fred_id: DCOILWTICO
+    description: WTI crude oil spot price
+    transform_code: 5
+    agg: mean

@@ -1,0 +1,70 @@
+name: large
+description: 15-variable macro VAR where BVAR-Minnesota shrinkage starts to matter
+start: '1985-01-01'
+end: null
+targets:
+  - GDPC1
+  - CPILFESL
+  - FEDFUNDS
+  - UNRATE
+
+variables:
+  # Core
+  - fred_id: GDPC1
+    transform_code: 5
+    agg: last
+  - fred_id: CPILFESL
+    transform_code: 5
+    agg: mean
+  - fred_id: FEDFUNDS
+    transform_code: 1
+    agg: mean
+  - fred_id: UNRATE
+    transform_code: 1
+    agg: mean
+  # Spreads / financial
+  - fred_id: T10Y3M
+    transform_code: 1
+    agg: mean
+  - fred_id: BAA10Y
+    transform_code: 1
+    agg: mean
+  - fred_id: DCOILWTICO
+    transform_code: 5
+    agg: mean
+  # Real activity detail
+  - fred_id: INDPRO
+    description: Industrial Production index
+    transform_code: 5
+    agg: mean
+  - fred_id: HOUST
+    description: Housing Starts
+    transform_code: 5
+    agg: mean
+  - fred_id: PAYEMS
+    description: Total nonfarm payrolls
+    transform_code: 5
+    agg: mean
+  # Prices and money
+  - fred_id: PCEPILFE
+    description: Core PCE inflation
+    transform_code: 5
+    agg: mean
+  - fred_id: M2SL
+    description: M2 money stock
+    transform_code: 5
+    agg: mean
+  # Households / labour quality
+  - fred_id: EMRATIO
+    description: Employment-population ratio
+    transform_code: 1
+    agg: mean
+  - fred_id: AHETPI
+    description: Avg hourly earnings (production workers)
+    transform_code: 5
+    agg: mean
+  # Sentiment / forward looking
+  - fred_id: UMCSENT
+    description: Univ of Michigan consumer sentiment
+    transform_code: 1
+    agg: mean

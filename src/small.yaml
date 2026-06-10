@@ -1,0 +1,27 @@
+name: small
+description: 4-variable canonical macro VAR (GDP, CPI, FFR, Unemployment)
+start: '1985-01-01'
+end: null  # null = latest available
+targets:
+  - GDPC1
+  - CPILFESL
+  - FEDFUNDS
+  - UNRATE
+
+variables:
+  - fred_id: GDPC1
+    description: Real GDP
+    transform_code: 5  # log diff (growth rate)
+    agg: last  # quarterly already
+  - fred_id: CPILFESL
+    description: Core CPI (less food and energy)
+    transform_code: 5
+    agg: mean
+  - fred_id: FEDFUNDS
+    description: Effective Federal Funds Rate
+    transform_code: 1  # level
+    agg: mean
+  - fred_id: UNRATE
+    description: Unemployment Rate
+    transform_code: 1
+    agg: mean
