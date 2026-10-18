@@ -52,3 +52,21 @@ and Thompson (2008)?
 
 Nine tests. Bonferroni: p < 0.05 / 9 = 0.0056. Certainty-equivalent gains are reported
 as point estimates, as in Campbell and Thompson, and are not counted as tests.
+
+## Amendment, 19 October 2026 (before any run)
+
+The first ALFRED vintages are GDPC1 1991-12, FEDFUNDS 1996-12, PCEPILFE 2000-08,
+RBUSBIS 2014-02 and WTISPLC 2016-10. Taking every series at its vintage would start the
+sample in late 2016 and leave no out-of-sample period after the 40-quarter minimum, so,
+following Study 3:
+
+- **GDP and core PCE** are taken at their ALFRED vintages, as above.
+- **The fed funds rate and WTI oil** are taken at final values. They are market prices and
+  are not revised.
+- **The BIS real broad dollar index** is taken at final values. It is lightly revised, so
+  this is a small departure from a pure real-time information set.
+
+Each final series is still cut at quarter t-1 at a decision at the end of quarter t. The
+common start is 2000Q3, set by core PCE's first vintage, and the first out-of-sample
+prediction comes about 40 quarters later, around 2010Q3. No other part of the design
+changes.
