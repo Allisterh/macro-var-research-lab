@@ -32,3 +32,6 @@ studies/varx_permutation_study/data/*
 studies/varx_permutation_study/src/payload.json
 studies/varx_permutation_study/src/*.png
 studies/varx_permutation_study/src/*_stats.json
+
+# study-4 cached inputs (public and Bloomberg) are never committed
+studies/economic_value/data/
