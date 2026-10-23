@@ -1,4 +1,4 @@
-# Macro VAR Research Lab
+# Macro VAR
 
 One question, asked three ways: what forecasts the US macroeconomy out of sample once
 leakage, overfitting and multiple comparisons are controlled? The answer, across 1,000+
